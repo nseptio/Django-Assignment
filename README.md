@@ -4,13 +4,13 @@ Link menuju [aplikasi Heroku](https://mengdjango.herokuapp.com/katalog/)
 
 ### Bagan _Request Client_ 
 
-
+![MVT Django](https://user-images.githubusercontent.com/87903309/190309432-8b12999e-7ba2-426d-b2e4-b4e1db7fb292.jpeg)
 
 ### _Virtual Environment_
 
 _Virtual environment_ adalah alat yang berfungsi untuk membuat lingkungan virtual yang terpisah
 dan terisolasi. Terisolasi berarti tertutup dan tidak bisa diakses dari luar. Ini diperlukan
-setiap ketika kita membuat proyek Django baru agar tidak bentrok dengan proyek yang lain.
+setiap kita membuat proyek Django baru agar tidak bentrok dengan proyek yang lain.
 _Virtual environment_ dapat mengisolasi _package_ serta _dependencies_ dari setiap proyek
 sehingga tidak ada bentrok antar versi yang lain. Misalkan, kita mempunyai proyek aplikasi
 menggunakan django 1.1. Lalu, kita ingin meng-_upgrade_ versi Django ke 4.0. Namun, terdapat
