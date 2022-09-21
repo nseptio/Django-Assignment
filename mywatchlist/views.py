@@ -7,12 +7,19 @@ from django.core import serializers
 
 def show_mywatchlist(request):
 
-    data_barang_mywatchlist = MyWatchListtItem.objects.all()
-    context = {
-        'list_anime': data_barang_mywatchlist,
-        'nama': 'Septio Nugroho'
-    }
+    data_mywatchlist = MyWatchListtItem.objects.all()
     
+    watched_counter = 0
+    for item in data_mywatchlist:
+        if item.watched:
+            watched_counter += 1
+    
+    context = {
+        'list_anime': data_mywatchlist,
+        'nama': 'Septio Nugroho',
+        'npm': '2106750843',
+        'banyak_tonton': watched_counter >= (len(data_mywatchlist) - watched_counter),
+    }
     return render(request, "mywatchlist.html", context)
 
 def show_mywatchlist_xml(request):

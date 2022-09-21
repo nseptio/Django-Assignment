@@ -23,12 +23,23 @@
     {% for anime in list_anime %}
         <tr>
             <td>{{anime.title}}</td>
-            <td>{{anime.watched}}</td>
+            {% if  anime.watched%}
+                <td>Yes</td>
+            {% else %}
+                <td>No</td>
+            {% endif %}
             <td>{{anime.release_date}}</td>
             <td>{{anime.rating}}</td>
-            <td><a href={{anime.review}}> MAL Review </a></td>
+            <td><a href={{anime.review}} target="_blank"> MAL Review </a></td>
         </tr>
     {% endfor %}
+    
 </table>
+
+{% if banyak_tonton %}
+    <p>Selamat, kamu sudah banyak menonton!</p>
+{% else %}
+    <p>Wah, kamu masih sedikit menonton!</p>
+{% endif %}
 
 {% endblock content %}
