@@ -1,0 +1,104 @@
+[
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 1,
+      "fields": {
+        "watched": true,
+        "title": "Violet Evergarden",
+        "rating": 8.67,
+        "release_date": "2018-01-11",
+        "review": "https://myanimelist.net/anime/33352/Violet_Evergarden/reviews"
+      }
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 2,
+      "fields": {
+        "watched": true,
+        "title": "A Silent Voice",
+        "rating": 8.95,
+        "release_date": "2016-09-17",
+        "review": "https://myanimelist.net/anime/28851/Koe_no_Katachi/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 3,
+      "fields": {
+        "watched": true,
+        "title": "Your Name",
+        "rating": 8.86,
+        "release_date": "2016-08-26",
+        "review": "https://myanimelist.net/anime/32281/Kimi_no_Na_wa/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 4,
+      "fields": {
+        "watched": true,
+        "title": "Violet Evergarden the Movie",
+        "rating": 8.93,
+        "release_date": "2020-09-18",
+        "review": "https://myanimelist.net/anime/37987/Violet_Evergarden_Movie/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 5,
+      "fields": {
+        "watched": false,
+        "title": "I Want To Eat Your Pancreas",
+        "rating": 8.56,
+        "release_date": "2018-09-01",
+        "review": "https://myanimelist.net/anime/36098/Kimi_no_Suizou_wo_Tabetai/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 6,
+      "fields": {
+        "watched": true,
+        "title": "Weathering with You",
+        "rating": 8.31,
+        "release_date": "2019-07-19",
+        "review": "https://myanimelist.net/anime/38826/Tenki_no_Ko/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 7,
+      "fields": {
+        "watched": true,
+        "title": "Spy X Family",
+        "rating": 8.76,
+        "release_date": "2022-04-22",
+        "review": "https://myanimelist.net/anime/50265/Spy_x_Family/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 8,
+      "fields": {
+        "watched": true,
+        "title": "Josee, the Tiger and the Fish",
+        "rating": 8.44,
+        "release_date": "2020-12-25",
+        "review": "https://myanimelist.net/anime/40787/Josee_to_Tora_to_Sakana-tachi/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 9,
+      "fields": {
+        "watched": false,
+        "title": "5 Centimeters Per Second",
+        "rating": 7.59,
+        "release_date": "2007-03-03",
+        "review": "https://myanimelist.net/anime/1689/Byousoku_5_Centimeter/reviews"}
+    },
+    {
+      "model": "mywatchlist.MyWatchListtItem",
+      "pk": 10,
+      "fields": {
+        "watched": false,
+        "title": "The Garden of Words",
+        "rating": 7.91,
+        "release_date": "2013-05-13",
+        "review": "https://myanimelist.net/anime/16782/Kotonoha_no_Niwa/reviews"}
+    }
+]
+  

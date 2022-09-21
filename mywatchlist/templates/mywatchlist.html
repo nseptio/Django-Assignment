@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Tugas 2 Assignment PBP/PBD</h1>
+
+<h5>Name: </h5>
+<p>{{nama}}</p>
+
+<h5>Student ID: </h5>
+<p>{{npm}}</p>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Watched</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+        <th>Review</th>
+    </tr>
+
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for anime in list_anime %}
+        <tr>
+            <td>{{anime.title}}</td>
+            <td>{{anime.watched}}</td>
+            <td>{{anime.release_date}}</td>
+            <td>{{anime.rating}}</td>
+            <td><a href={{anime.review}}> MAL Review </a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
