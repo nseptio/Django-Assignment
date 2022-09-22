@@ -1,4 +1,4 @@
-# Tugas 2 Assignment PBP/PBD
+# Tugas 3 PBP
 
 Link menuju [HTML](https://mengdjango.herokuapp.com/mywatchlist/html/) [JSON](https://mengdjango.herokuapp.com/mywatchlist/json/) [XML](https://mengdjango.herokuapp.com/mywatchlist/xml/)
 
@@ -23,3 +23,14 @@ _Data delivery_ diperlukan sebagai alat komunikasi antar database dan pengguna s
 9. Menambahkan `release: sh -c 'python manage.py migrate && python manage.py loaddata initial_mywatchlist_data.json'
 web: gunicorn project_django.wsgi --log-file -` di berkas Procfile untuk load data ke aplikasi Heroku
 10.  Menambahkan unit test pada tests.py dengan membuat class dan tiga fungsi di dalamnya untuk menguji URL yang telah kita buat mengembalikan respon HTTP 200 OK
+
+### Screenshoot Postman ###
+
+## HTML ##
+![image](https://user-images.githubusercontent.com/87903309/191660106-54a8254a-cdc0-43d0-9f14-1ed1c628f9ec.png)
+
+## JSON ##
+![image](https://user-images.githubusercontent.com/87903309/191660038-1e256ccc-4f2f-469e-a8de-fbeba208dacf.png)
+
+## XML ##
+![image](https://user-images.githubusercontent.com/87903309/191659982-848378b7-2ef6-4f09-87b5-fc2fe479b94e.png)
