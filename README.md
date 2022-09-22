@@ -1,34 +1,25 @@
 # Tugas 2 Assignment PBP/PBD
 
-Link menuju [aplikasi Heroku](https://mengdjango.herokuapp.com/katalog/)
+Link menuju [HTML](https://mengdjango.herokuapp.com/mywatchlist/html/) [JSON](https://mengdjango.herokuapp.com/mywatchlist/json/) [XML](https://mengdjango.herokuapp.com/mywatchlist/xml/)
 
-### Bagan _Request Client_ 
+### Perbedaan antara JSON, XML, dan HTML ###
 
-![MVT Django](https://user-images.githubusercontent.com/87903309/190309432-8b12999e-7ba2-426d-b2e4-b4e1db7fb292.jpeg)
+Fungsi utama HTML berbeda dengan JSON dan XML. HTML berfokus pada menampilkan data ke halaman web menggunakan tag, sedangkan JSON dan HTML berfokus pada _data delivery_ dan menyimpan data di database server. Penulisan ketiganya terlihat jelas berbeda. HTML menggunakan tag untuk mendeskripsikan setiap element dan dapat memiliki attribute. JSON menggunakan tipe data yang mirip dengan Map atau Dictionary yang mana setiap element memiliki key dan value. XML mirip dengan HTML, yaitu menggunakan tag sehingga terlihat lebih terstruktur daripada JSON.
 
-### _Virtual Environment_
+### _Data Delivery_ ###
 
-_Virtual environment_ adalah alat yang berfungsi untuk membuat lingkungan virtual yang terpisah
-dan terisolasi. Terisolasi berarti tertutup dan tidak bisa diakses dari luar. Ini diperlukan
-setiap kita membuat proyek Django baru agar tidak bentrok dengan proyek yang lain.
-_Virtual environment_ dapat mengisolasi _package_ serta _dependencies_ dari setiap proyek
-sehingga tidak ada bentrok antar versi yang lain. Misalkan, kita mempunyai proyek aplikasi
-menggunakan django 1.1. Lalu, kita ingin meng-_upgrade_ versi Django ke 4.0. Namun, terdapat
-proyek lain yang menggunakan versi lama. Akibatnya, aplikasi tersebut tidak bisa dijalankan
-karena banyak perubahan dari versi yang lama. Oleh karena itu, setiap proyek Django sebaiknya
-menggunakan _virtualenv_-nya sendiri.
+_Data delivery_ diperlukan sebagai alat komunikasi antar database dan pengguna sehingga data yang ada di database kita dapat ditampilkan ke web (platform). Data pengguna dapat diakses sehingga dapat berinteraksi dengan pengguna tersebut. Selain itu, _data delivery_ berguna untuk menyesuaikan data yang diperlukan untuk dikirim ke tampilan pengguna sehingga tidak semua data harus dikirim. Dengan begitu, waktu pengiriman data dapat lebih efesien.
 
-### Cara Implementasi
+### Langkah Implementasi tugas 3 ###
 
-Pada tugas ini, saya banyak melihat prosedur di tutorial 1. Pertama, saya membuat fungsi 
-show_katalog di views.py pada folder katalog. Fungsi itu dapat mengambil data dari class
-yang ada di models.py dengan mengimport class CatalogItem dan menyimpannya di dalam 
-dictionary bernama context. Fungsi show_katalog akan me-return fungsi render yang akan 
-mengirimkan data yang ada di context ke template HTML. Tahap selanjutnya melakukan routing
-pada urls.py dengan menambahkan path katalog pada list urlpatterns sebagai mapping ke
-app katalog. Pada tahap ini, kita sudah dapat melihat tamplian HTML yang berisi data context
-melalui localhost. Selanjutnya, saya melakukan deployment ke aplikasi Heroku. Hal pertama yang
-saya lakukan adalah menambah dua variabel secret di repositori github HEROKU_API_KEY dan 
-HEROKU_APP_NAME. Value HEROKU_API_KEY didapat dari API key yang ada di akun Heroku, sedangkan
-HEROKU_APP_NAME adalah nama aplikasi yang telah kita buat di Heroku. Karena file dpl.yml dan
-Procfile sudah ada, kita dapat langsung melakukan deployment ke aplikasi Heroku.
+1. Membuat folder aplikasi mywatchlist dengan perintah `python manage.py startapp mywatchlist`
+2. Membuat class models bernama MyWatchListtItem dengan attribut sesuai deskripsi tugas 3
+3. Menambah mywatchlist di INSTALLED_APPS di folder project_django dan melakukan migrasi dengan perintah `python manage.py makemigrations` dan `python manage.py migrate`
+4. Membuat folder bernama fixtures di dalam folder mywatchlist dan membuat berkas bernama initial_mywatchlist_data.json
+5. Mengisi berkas initial_mywatchlist_data.json dengan 10 objek dan load data dengan perintah `python manage.py loaddata initial_mywatclist_data.json`
+6. Membuat lima fungsi pada berkas views.py, show_mywatchlist, show_mywatchlist_xml, show_mywatchlist_json, serta akses JSON dan XML dengan id yang masing-masing akan menyajikan data dalam format html, xml, dan json
+7. Membuat folder templates dan berkas watchlist.html yang akan menjadi response untuk ditampilkan dalam format html
+8. Menambahkan lima fungsi yang telah dibuat ke file urls.py pada folder mywatchlist untuk memetakan fungsi yang akan dipanggil berdasarkan alamat yang dituju. Kemudian menambahkan path file tersebut ke file urls.py di folder proyek django.
+9. Menambahkan `release: sh -c 'python manage.py migrate && python manage.py loaddata initial_mywatchlist_data.json'
+web: gunicorn project_django.wsgi --log-file -` di berkas Procfile untuk load data ke aplikasi Heroku
+10.  Menambahkan unit test pada tests.py dengan membuat class dan tiga fungsi di dalamnya untuk menguji URL yang telah kita buat mengembalikan respon HTTP 200 OK
