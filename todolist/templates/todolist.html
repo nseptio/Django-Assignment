@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Todolist{% endblock %}
+
+{% block content %}
+<h5>Nama: </h5>
+<p>Fill me!</p>
+
+<h5>Sesi terakhir login: {{last_login}}</h5>
+
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+{% endblock content %}
