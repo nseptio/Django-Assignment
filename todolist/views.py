@@ -1,8 +1,13 @@
 import datetime
+from multiprocessing import context
+from tkinter import E
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
+
 from todolist.models import Task
+from todolist.forms import CreateNewTask
+
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -56,3 +61,16 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+def createTask(request):
+    if request.method == "POST":
+        form = CreateNewTask(request.POST)
+        
+        
+    else:
+        form = CreateNewTask()
+    context = {
+        "form": form
+    }
+    return render(request, 'create-task.html', context)
+
