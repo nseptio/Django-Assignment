@@ -72,6 +72,7 @@ def create_task(request):
         if form.is_valid():
             user = request.user
             data = form.cleaned_data
+            print(data)
             Task.objects.create(user=user, **data)
             return HttpResponseRedirect(reverse("todolist:show_todolist"))
         
@@ -84,13 +85,16 @@ def create_task(request):
 
     return render(request, 'create-task.html', context)
 
-@login_required(login_url="/todolist/login/")
-def user_todolist(request):
-    user = request.user
-    user_todolist = Task.objects.filter(user= user)
-    context = {
-        "todolist": user_todolist,
-        "username": user.username,
-    }
+def delete_task(request, pk):
+    # user = request.user
+    deleted_task = Task.objects.get(pk = pk)
+    deleted_task.delete()
+    return redirect("todolist:show_todolist")
+
+def update_task(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.is_finished = not task.is_finished
+    task.save()
+    return redirect("todolist:show_todolist")
     
-    return render(request, "todolist.html", context)
+    
