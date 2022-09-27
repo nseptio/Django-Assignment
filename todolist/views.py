@@ -19,10 +19,11 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.all()
+    user = request.user
+    data_todolist = Task.objects.filter(user= user)
     context = {
-        'list_barang': data_todolist,
-        'nama': 'Septio Nugroho',
+        "username": user.username,
+        'todolist': data_todolist,
         'last_login': request.COOKIES['last_login'],
     }
     
@@ -62,15 +63,34 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
-def createTask(request):
+@login_required(login_url="/todolist/login/")
+def create_task(request):
+    
     if request.method == "POST":
         form = CreateNewTask(request.POST)
         
+        if form.is_valid():
+            user = request.user
+            data = form.cleaned_data
+            Task.objects.create(user=user, **data)
+            return HttpResponseRedirect(reverse("todolist:show_todolist"))
         
     else:
         form = CreateNewTask()
+        
     context = {
         "form": form
     }
+
     return render(request, 'create-task.html', context)
 
+@login_required(login_url="/todolist/login/")
+def user_todolist(request):
+    user = request.user
+    user_todolist = Task.objects.filter(user= user)
+    context = {
+        "todolist": user_todolist,
+        "username": user.username,
+    }
+    
+    return render(request, "todolist.html", context)
