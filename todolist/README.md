@@ -16,18 +16,18 @@ Ketika pengguna melakukan submisi form, maka hal tersebut melalukan sebuah _requ
 2. Menambahkan path aplikasi todolist sehingga dapat diakses di localhost dengan cara menambah `path("todolist/", include("todolist.urls")),` ke `urls.py` pada folder `project_django`.
 3. Membuat sebuah model dengan class bernama `Task` pada berkas `models.py`. Setelah itu, menambah fields sesuai dengan ketentuan tugas. Kemudian, melakukan migrasi models yang sudah dibuat dengan perintah `python manage.py makemigrations` lalu `python manage.py migrate`.
 4. Membuat fungsi pada `views.py` todolist:
-  - show_todolist, fungsi untuk halaman utama yang menampilkan semua task user. Sebelum bisa mengaksesnya, perlu melakukan login terlebih dahulu karena terdapat kode `@login_required(login_url='/todolist/login/')`.
-  - register, untuk melakukan registrasi pengguna baru
-  - login_user, melakukan autentikasi pengguna dengan username dan password
-  - logout_user, untuk keluar dari halaman utama
-  - create_task, membuat form berdasarkan `forms.py` untuk membuat task baru
-  - delete_task, untuk menghapus task
-  - update_task, untuk mengubah status task pengguna, selesai atau belum
+    - show_todolist, fungsi untuk halaman utama yang menampilkan semua task user. Sebelum bisa mengaksesnya, perlu melakukan login terlebih dahulu karena terdapat kode `@login_required(login_url='/todolist/login/')`.
+    - register, untuk melakukan registrasi pengguna baru
+    - login_user, melakukan autentikasi pengguna dengan username dan password
+    - logout_user, untuk keluar dari halaman utama
+    - create_task, membuat form berdasarkan `forms.py` untuk membuat task baru
+    - delete_task, untuk menghapus task
+    - update_task, untuk mengubah status task pengguna, selesai atau belum
 5. Memetakan fungsi yang telah dibuat di `views.py` ke `urls.py`
 6. Membuat template HTML:
-  - todolist, halaman utama
-  - login
-  - register
-  - create-task, membuat task baru
+    - todolist, halaman utama
+    - login
+    - register
+    - create-task, membuat task baru
  7. Melakukan _deployment_ ke Heroku. Karena sudah diatur pada tugas sebelumnya, maka hanya melakukan push ke github
  8. Membuat dua akun pengguna dan tiga dummy data
