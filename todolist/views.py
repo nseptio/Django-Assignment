@@ -24,7 +24,6 @@ def show_todolist(request):
     context = {
         "username": user.username,
         'todolist': data_todolist,
-        'last_login': request.COOKIES['last_login'],
     }
     
     return render(request, "todolist.html", context)
@@ -59,9 +58,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    response = HttpResponseRedirect(reverse('todolist:login'))
-    response.delete_cookie('last_login')
-    return response
+    return redirect('todolist:login')
 
 @login_required(login_url="/todolist/login/")
 def create_task(request):
