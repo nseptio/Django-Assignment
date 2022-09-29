@@ -22,12 +22,12 @@ Ketika pengguna melakukan submisi form, maka hal tersebut melalukan sebuah _requ
     - logout_user, untuk keluar dari halaman utama
     - create_task, membuat form berdasarkan `forms.py` untuk membuat task baru
     - delete_task, untuk menghapus task
-    - update_task, untuk mengubah status task pengguna, selesai atau belum
+    - update_task, untuk mengubah status task pengguna, selesai atau belum.
 5. Memetakan fungsi yang telah dibuat di `views.py` ke `urls.py`
 6. Membuat template HTML:
     - todolist, halaman utama
     - login
     - register
-    - create-task, membuat task baru
- 7. Melakukan _deployment_ ke Heroku. Karena sudah diatur pada tugas sebelumnya, maka hanya melakukan push ke github
- 8. Membuat dua akun pengguna dan tiga dummy data
+    - create-task, membuat task baru.
+ 7. Melakukan _deployment_ ke Heroku. Karena sudah diatur pada tugas sebelumnya, maka hanya melakukan push ke github.
+ 8. Membuat dua akun pengguna dan tiga dummy data.
