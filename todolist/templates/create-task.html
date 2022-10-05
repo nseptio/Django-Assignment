@@ -1,26 +1,66 @@
-{% extends 'base.html' %} {% block meta %}
-{% endblock meta %} 
+{% extends 'base.html' %} {% block meta %} {% endblock meta %}
 <title>Membuat Task</title>
+{% block content%}
+<head>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d6efd;
+    }
 
-{% block content %}
+    .create-task {
+      max-width: 500px;
+      height: min-content;
+      padding: 20px;
+      border-radius: 12px;
+      background: white;
+    }
+  </style>
+</head>
 
 <div class="create-task">
-  <h1>Tambah Task Baru</h1>
+  <h1 class="text-center mb-4">Tambah Task Baru</h1>
 
   <form method="POST">
     {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-      <tr>
-        <td></td>
-        <td><input type="submit" name="submit" value="Tambah Task" /></td>
-      </tr>
-      <tr>
-        <td>
-          <button><a href="{% url 'todolist:show_todolist' %}">Kembali</a></button>
-        </td>
-      </tr>
-    </table>
+    <div class="form-floating mb-4">
+      <input
+        type="text"
+        name="title"
+        placeholder="Judul"
+        class="form-control form-control-lg"
+        id="floatingInput"
+      />
+      <label for="floatingInput">{{ form.title.label }}</label>
+    </div>
+
+    <div class="form-floating mb-4">
+      <input
+        type="text"
+        name="description"
+        placeholder="Deskripsi"
+        class="form-control form-control-lg"
+        id="floatingInput"
+      />
+      <label for="floatingInput">{{form.description.label}}</label>
+    </div>
+    <div>
+      <input
+        class="btn btn-outline-dark"
+        type="submit"
+        name="submit"
+        value="Tambah Task"
+      />
+      <a
+        class="btn btn-secondary"
+        role="button"
+        href="{% url 'todolist:show_todolist' %}"
+        >Kembali
+      </a>
+    </div>
   </form>
 </div>
 

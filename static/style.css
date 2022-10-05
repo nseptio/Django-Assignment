@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:hover, a:focus, a:active {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.card {
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin: 20px;
+}

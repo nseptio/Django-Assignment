@@ -1,45 +1,87 @@
-{% extends 'base.html' %}
-
-{% block meta %}
-{% endblock meta %}
+{% extends 'base.html' %} {% block meta %} {% endblock meta %}
 <title>Login</title>
 
 {% block content %}
 
-<div class = "login">
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <h1>Login</h1>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d6efd;
+    }
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+    .login {
+      max-width: 360px;
+      height: min-content;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ffffff;
+    }
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+    .btn {
+      width: 100%;
+    }
+  </style>
+</head>
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+<div class="login">
+  <h1 class="text-center">Login</h1>
 
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        class="form-control"
+        id="floatingInput"
+      />
+      <label for="floatingInput">Username</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form-control"
+        id="floatingPassword"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="mb-3">
+      <input
+        class="btn btn-outline-dark login_btn"
+        role="button"
+        type="submit"
+        value="Login"
+      />
+    </div>
+  </form>
+
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <span class="text-center text-muted mt-3 mb-0"> Belum mempunyai akun? </span
+  ><a class="fw-bold text-body" href="{% url 'todolist:register' %}"
+    >Buat Akun</a
+  >
 </div>
 
 {% endblock content %}

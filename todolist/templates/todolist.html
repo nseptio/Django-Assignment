@@ -1,48 +1,69 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTodolist</title>
 
-<title>MyTodolist</title>
+    <style>
+      .main-btn {
+        margin: 24px auto;
+      }
+    </style>
 
-{% block content %}
-    <h1>Tugas 4 PBP</h1>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">User: {{username}}</a>
+        
+        <a 
+          class="btn btn-outline-light" 
+          role="button" 
+          href="{% url 'todolist:logout' %}">Logout
+        </a>
+    </nav>
 
-    <h3>Username: {{username}}</h3>
-    <table>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Created At</th>
-          <th>Status</th>
-        </tr>
-        {% for task in todolist %}
-            <tr>
-                <th>{{task.title}}</th>
-                <th>{{task.description}}</th>
-                <th>{{task.date}}</th>
-                <th>
-                    {% if task.is_finished %} Selesai {% else %} Belum Selesai {% endif %}
-                </th>
-                <th>
-                    <form method="POST">
-                      <button>
-                        <a href="{% url 'todolist:update-task' task.id %}"
-                          >Update Selesai
-                        </a>
-                      </button>
-                    </form>
-                </th>
-                <th>
-                    <button>
-                      <a href="{% url 'todolist:delete-task' task.id %}">Hapus</a>
-                    </button>
-                </th>
-            </tr>
-        {% endfor %}
-      </table>
+    <div class="text-center main-btn">
+        <a 
+        class="btn btn-primary btn-lg" 
+        role="button" 
+        href="./create-task">Tambah Task Baru
+      </a>
+    </div>
+    
+    <main class="row mx-6">
+      {% for task in todolist %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{task.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Status: {% if task.is_finished %} Selesai {% else %} Belum Selesai
+              {% endif %}
+          </h6>
+          <p class="card-text">
+            {{task.description}}
+          </p>
+        </div>
+        <div class="mb-2">
+          <a 
+          class="btn btn-secondary"
+          role="button" 
+          href="{% url 'todolist:update-task' task.id %}">Update
+          </a>
+          <a 
+          class="btn btn-danger" 
+          role="button" 
+          href="{% url 'todolist:delete-task' task.id %}">Hapus
+          </a>
+        </div>
 
-      <button>
-        <a href="./create-task">Tambah Task Baru</a>
-      </button>
-      
-      <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>
     
 {% endblock content %}
