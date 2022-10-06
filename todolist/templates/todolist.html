@@ -8,8 +8,18 @@
     <title>MyTodolist</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
       .main-btn {
         margin: 24px auto;
+      }
+
+      .footer {
+        width: 100%;
       }
     </style>
 
@@ -46,7 +56,9 @@
           <p class="card-text">
             {{task.description}}
           </p>
+
         </div>
+        
         <div class="mb-2">
           <a 
           class="btn btn-secondary"
@@ -58,6 +70,10 @@
           role="button" 
           href="{% url 'todolist:delete-task' task.id %}">Hapus
           </a>
+        </div>
+        
+        <div class="card-footer text-muted footer">
+          {{task.date}}
         </div>
 
       </div>

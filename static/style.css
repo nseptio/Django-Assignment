@@ -1,16 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a, a:hover, a:focus, a:active {
-    display: inline-block;
-    text-decoration: none;
+a,
+a:hover,
+a:focus,
+a:active {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .card {
-    border-radius: 10px;
-    border: 2px solid #ddd;
-    margin: 20px;
+  transition: box-shadow 0.4s;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
