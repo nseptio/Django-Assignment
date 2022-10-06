@@ -35,9 +35,10 @@ Ketika pengguna melakukan submisi form, maka hal tersebut melalukan sebuah _requ
  # Tugas 5 PBP
  
  ### Perbedaan Inline, Internal, dan External CSS
-    - Inline: kode CSS yang ditulis langsung pada atribut style di tag elemen HTML
-    - Internal: kode CSS yang ditulis di dalam tag `<style>` di bagian head dokumen HTML 
-    - External: kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ditulis di dalam file khusus yang berekstensi `.css` dan harus ditautkan ke HTML melalui tag `<link>` di bagian HEAD.
+ 
+- Inline: kode CSS yang ditulis langsung pada atribut style di tag elemen HTML
+- Internal: kode CSS yang ditulis di dalam tag `<style>` di bagian head dokumen HTML 
+- External: kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ditulis di dalam file khusus yang berekstensi `.css` dan harus ditautkan ke HTML melalui tag `<link>` di bagian HEAD.
     
 ### Tag HTML5
  Beberapa tag HTML5 yang umum digunakan:
