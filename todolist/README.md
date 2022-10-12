@@ -31,3 +31,34 @@ Ketika pengguna melakukan submisi form, maka hal tersebut melalukan sebuah _requ
     - create-task, membuat task baru.
  7. Melakukan _deployment_ ke Heroku. Karena sudah diatur pada tugas sebelumnya, maka hanya melakukan push ke github.
  8. Membuat dua akun pengguna dan tiga dummy data.
+ 
+ # Tugas 5 PBP
+ 
+ ### Perbedaan Inline, Internal, dan External CSS
+ 
+- Inline: kode CSS yang ditulis langsung pada atribut style di tag elemen HTML
+- Internal: kode CSS yang ditulis di dalam tag `<style>` di bagian head dokumen HTML 
+- External: kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ditulis di dalam file khusus yang berekstensi `.css` dan harus ditautkan ke HTML melalui tag `<link>` di bagian HEAD.
+    
+### Tag HTML5
+ Beberapa tag HTML5 yang umum digunakan:
+- `<header>`, tag yang dapat digunakan untuk menandai bagian halaman merupakan header dari halaman web itu
+- `<article>`, tag untuk menandakan bagian artikel dalam sebuah halaman web, seperti _forum post_, blog, dll.
+- `<section>` dapat digunakan untuk membagi setiap bagian konten halaman web
+- `<footer>` tag yang dapat digunakan untuk menandai bagian itu merupakan footer dari halaman web.
+    
+### CSS Selector
+Beberapa CSS selector yang sering saya temui:
+1. `*`, selector yang bersifat universal sehingga akan diwariskan ke semua elemen HTML
+2. `name-tag`, selector yang hanya berlaku pada tag HTML yang dipilih
+3. `#id-name`, selector yang memilih elemen dengan id yang unik
+4. `.class-name`, selector yang berlaku pada class elemen yang ditujuk
+5. `p:pseudo-name`, selector yang berarti memilih elemen dengan class dengan didefinisikan state khusus.
+
+### Implementasi Tugas 5
+Langkah implementasi Tugas 5:
+1. Membuat form login, register, dan create-task menjadi di tengah layar dengan cara menjadikan display-nya flex
+2. Kustomisasi halaman todolist dengan cards dari Bootstrap
+3. Membuat file `styles.css` untuk membuat kustomisasi umum
+ 
+ 
