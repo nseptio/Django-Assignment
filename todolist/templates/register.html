@@ -1,109 +1,84 @@
-{% extends 'base.html' %} {% block meta %} {% endblock meta %}
+{% extends 'base.html' %}
+{% load static %}
 
-<title>Registrasi</title>
+{% block meta %}
+<title>Register</title>
+<link rel="stylesheet" href="{% static '/style.css' %}" />
+{% endblock meta %}
+
 {% block content %}
+<main>
+  <div class="main-content">
+    <h1 class="text-center mb-4">Registrasi</h1>
 
-<head>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0d6efd;
-    }
-
-    .register {
-      max-width: 500px;
-      height: min-content;
-      padding: 20px;
-      border-radius: 12px;
-      background: white;
-    }
-
-    .btn {
-      width: 100%;
-    }
-  </style>
-</head>
-
-<div class="register">
-  <h1 class="text-center mb-4">Registrasi</h1>
-
-  <form method="POST">
-    {% csrf_token %}
-    <div class="form-floating mb-4">
-      <input
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-floating mb-4">
+        <input
         type="text"
         name="username"
         placeholder="Username"
         class="form-control form-control-lg"
         id="floatingInput"
-      />
-      <label for="floatingInput"> {{ form.username.label }} </label>
-      {% if form.username.errors %}
-      <div class="mt-2 text-red-500 text-sm w-full">
-        {{ form.username.errors }}
+        />
+        <label for="floatingInput"> {{ form.username.label }} </label>
+        {% if form.username.errors %}
+        <div class="mt-2 text-red-500 text-sm w-full">
+          {{ form.username.errors }}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-    </div>
-
-    <div class="form-floating mb-4">
-      <input
+      
+      <div class="form-floating mb-4">
+        <input
         type="password"
         name="password1"
         placeholder="Password"
         class="form-control form-control-lg"
         id="floatingPassword"
-      />
-      <label for="floatingPassword"> {{ form.password1.label }} </label>
-      {% if form.password1.errors %}
-      <div class="mt-2 text-red-500 text-sm w-full">
+        />
+        <label for="floatingPassword"> {{ form.password1.label }} </label>
+        {% if form.password1.errors %}
+        <div class="mt-2 text-red-500 text-sm w-full">
         {{ form.password1.errors }}
       </div>
       {% endif %}
     </div>
-
+    
     <div class="form-floating mb-4">
       <input
-        type="password"
-        name="password2"
-        placeholder="Password"
-        class="form-control form-control-lg"
-        id="floatingPassword"
+      type="password"
+      name="password2"
+      placeholder="Password"
+      class="form-control form-control-lg"
+      id="floatingPassword"
       />
       <label
-        class="after:content-['*'] after:text-red-500"
-        for="floatingPassword"
+      class="after:content-['*'] after:text-red-500"
+      for="floatingPassword"
       >
-        {{ form.password2.label }}
-      </label>
-      {% if form.password2.errors %}
-      <div class="mt-2 text-red-500 text-sm w-full">
-        {{ form.password2.errors }}
-      </div>
-      {% endif %}
+      {{ form.password2.label }}
+    </label>
+    {% if form.password2.errors %}
+    <div class="mt-2 text-red-500 text-sm w-full">
+      {{ form.password2.errors }}
     </div>
-
-    <div>
-      <input
-        class="btn btn-outline-dark login_btn"
-        role="button"
-        type="submit"
-        value="Register"
-      />
-    </div>
-
-    <p class="text-center text-muted mt-3 mb-0">
-      Have already an account?
-      <a href="/todolist/login/" class="fw-bold text-body"><u>Login here</u></a>
-    </p>
+    {% endif %}
+  </div>
+  
+  <div>
+    <input
+    class="btn btn-form btn-outline-dark login_btn"
+    role="button"
+    type="submit"
+    value="Register"
+    />
+  </div>
+  
+  <p class="text-center text-muted mt-3 mb-0">
+    Have already an account?
+    <a href="/todolist/login/" class="fw-bold text-body"><u>Login here</u></a>
+  </p>
   </form>
 
   {% if messages %}
@@ -113,6 +88,7 @@
     {% endfor %}
   </ul>
   {% endif %}
-</div>
+  </div>
+</main>
 
 {% endblock content %}
