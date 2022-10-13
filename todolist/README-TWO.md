@@ -2,7 +2,7 @@
 # Tugas 6 PBP
 
 ### Perbedaan _Asynchronous Programming_ dan _Synchronous Programming_
-Perbedaan dari asynchronous programming dengan synchronous programming adalah bagaimana alur berjalannya dari program-program. Pada synchronous ketika program/kode sedang di jalankan, maka program selanjutnya harus menunggu program sebelumnya selesai untuk bisa dijalankan, permintaan klien akan diblokir untuk memastikan tidak ada program yang berjalan bersamaan. Sedangkan pada asynchronous program tidak perlu menunggu program sebelumnya selesai untuk bisa dijalankan, program-program di asynchronous bisa berjalan secara serentak, sehingga asynchronous lebih cepat dibanding asynchronous.
+Perbedaan dari _asynchronous programming_ dengan _synchronous programming_ adalah bagaimana proses berjalannya program. Pada _synchronous_ ketika program sedang dijalankan, maka program selanjutnya harus menunggu program sebelumnya selesai untuk bisa dijalankan, dengan kata lain bersifat sekuensial sehingga request baru user harus menunggu request sebelumnya diproses. Pada _asynchronous_, program tidak perlu menunggu program sebelumnya selesai untuk dapat dijalankan, program di asynchronous bisa berjalan secara paralel, user dapat melakukan request lain saat request sebelumnya sedang diproses.
 
 ### Paradigma _Event-Driven Programming_
 Teknik pemrograman yang konsep eksekusi programmnya terjadi karena suatu event
