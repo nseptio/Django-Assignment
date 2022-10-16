@@ -1,5 +1,4 @@
 import datetime
-from turtle import title
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, render
