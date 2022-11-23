@@ -1,6 +1,4 @@
 from django.test import TestCase
-from multiprocessing.connection import Client
-from urllib import response
 
 # Create your tests here.
 class MywatchlistTest(TestCase):
