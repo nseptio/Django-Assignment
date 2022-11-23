@@ -5,9 +5,9 @@
       "fields": {
         "watched": true,
         "title": "Violet Evergarden",
-        "rating": 4.35,
+        "rating": 5,
         "release_date": "2018-01-11",
-        "review": "https://myanimelist.net/anime/33352/Violet_Evergarden/reviews"
+        "review": "My favorite series all of the time! A story about a young female ex-soldier who gets a job at a writers' agency and goes on assignments to create letters that can connect people. What's unique is how Violet Evergarden with no emotion and feeling can help a human express their emotions and help them grow as a person."
       }
     },
     {
@@ -16,9 +16,9 @@
       "fields": {
         "watched": true,
         "title": "A Silent Voice",
-        "rating": 4.5,
+        "rating": 4.75,
         "release_date": "2016-09-17",
-        "review": "https://myanimelist.net/anime/28851/Koe_no_Katachi/reviews"}
+        "review": "A Silent Voice is a sensitive film that tackles themes of disability, bullying, and mental health in young people with compassion and understanding."}
     },
     {
       "model": "mywatchlist.MyWatchListtItem",
@@ -26,17 +26,17 @@
       "fields": {
         "watched": true,
         "title": "Your Name",
-        "rating": 4.42,
+        "rating": 4.25,
         "release_date": "2016-08-26",
-        "review": "https://myanimelist.net/anime/32281/Kimi_no_Na_wa/reviews"}
+        "review": "A romance fantasy about two teenagers named Mitsuha Miyamizu and Taki Tachibana who can swap bodies with each other. A heartwarming story of how they are separated by time and place, but actually they are very close."}
     },
     {
       "model": "mywatchlist.MyWatchListtItem",
       "pk": 4,
       "fields": {
-        "watched": true,
-        "title": "Violet Evergarden the Movie",
-        "rating": 4.45,
+        "watched": false,
+        "title": "March Comes In Like A Lion",
+        "rating": 0,
         "release_date": "2020-09-18",
         "review": "https://myanimelist.net/anime/37987/Violet_Evergarden_Movie/reviews"}
     },
@@ -46,7 +46,7 @@
       "fields": {
         "watched": false,
         "title": "I Want To Eat Your Pancreas",
-        "rating": 4.25,
+        "rating": 0,
         "release_date": "2018-09-01",
         "review": "https://myanimelist.net/anime/36098/Kimi_no_Suizou_wo_Tabetai/reviews"}
     },
@@ -65,18 +65,18 @@
       "pk": 7,
       "fields": {
         "watched": true,
-        "title": "Spy X Family",
+        "title": "Bocchi the Rock!",
         "rating": 4.25,
         "release_date": "2022-04-22",
-        "review": "https://myanimelist.net/anime/50265/Spy_x_Family/reviews"}
+        "review": "A must-watch. A story about a girl yearning to make friends and perform together in a band. One of the best anime in 2022."}
     },
     {
       "model": "mywatchlist.MyWatchListtItem",
       "pk": 8,
       "fields": {
-        "watched": true,
-        "title": "Josee, the Tiger and the Fish",
-        "rating": 4.25,
+        "watched": false,
+        "title": "Made in Abyss",
+        "rating": 0,
         "release_date": "2020-12-25",
         "review": "https://myanimelist.net/anime/40787/Josee_to_Tora_to_Sakana-tachi/reviews"}
     },
@@ -86,7 +86,7 @@
       "fields": {
         "watched": false,
         "title": "5 Centimeters Per Second",
-        "rating": 3.80,
+        "rating": 0,
         "release_date": "2007-03-03",
         "review": "https://myanimelist.net/anime/1689/Byousoku_5_Centimeter/reviews"}
     },
@@ -96,7 +96,7 @@
       "fields": {
         "watched": false,
         "title": "The Garden of Words",
-        "rating": 3.90,
+        "rating": 0,
         "release_date": "2013-05-13",
         "review": "https://myanimelist.net/anime/16782/Kotonoha_no_Niwa/reviews"}
     }
